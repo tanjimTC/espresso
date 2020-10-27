@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo 2", cursive;
+}
+.main {
+  background-image: url("./mukul-wadhwa-xpo5BggQo3E-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.home-left img {
+  position: relative;
+  left: -25px;
+}
+.navbar {
+  color: black !important;
+  font-weight: 500;
+}
+.home-right h4,
+i {
+  color: #e29578;
+  padding-left: 100px;
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-right h4,
+  i {
+    color: #e29578;
+    padding-left: 0px;
+    padding-top: 100px;
+  }
+  .home-left img {
+    position: relative;
+    left: 0px;
+    top: 30px;
+  }
+}
