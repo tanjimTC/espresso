@@ -43,6 +43,16 @@
   color: rgba(153, 153, 153, 0.788);
 }
 
+.list-view li span:nth-child(4) {
+  font-size: 20px;
+  margin-top: 6px;
+  position: absolute;
+  top: 65px;
+  right: 7px;
+  color: #006d77;
+  cursor: pointer;
+}
+
 .list-view li div {
   position: absolute;
   top: 0;
