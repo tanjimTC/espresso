@@ -33,6 +33,24 @@ function rederCafe(doc) {
   edit.addEventListener("click", (e) => {
     let id = e.target.parentElement.getAttribute("data-id");
     $("#exampleModal").modal("show");
+    var docRef = db.collection("caffes").doc(id);
+
+    docRef
+      .get()
+      .then(function (doc) {
+        if (doc.exists) {
+          console.log("Document data:", doc.data());
+          data["name"].value = doc.data().name;
+          data["location"].value = doc.data().location;
+          data["city"].value = doc.data().city;
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
+      })
+      .catch(function (error) {
+        console.log("Error getting document:", error);
+      });
     updateUi(id);
     console.log(id);
   });
@@ -42,6 +60,7 @@ function updateUi(id) {
   console.log(id);
   data.addEventListener("submit", (e) => {
     e.preventDefault();
+    console.log("here");
     db.collection("caffes").doc(id).update({
       name: data["name"].value,
       city: data["city"].value,
