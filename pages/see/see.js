@@ -39,7 +39,6 @@ function rederCafe(doc) {
       .get()
       .then(function (doc) {
         if (doc.exists) {
-          console.log("Document data:", doc.data());
           data["name"].value = doc.data().name;
           data["location"].value = doc.data().location;
           data["city"].value = doc.data().city;
@@ -60,7 +59,6 @@ function updateUi(id) {
   console.log(id);
   data.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("here");
     db.collection("caffes").doc(id).update({
       name: data["name"].value,
       city: data["city"].value,
